@@ -21,3 +21,7 @@ ports:
 volumes:
   - /share/invoice_uploads:/app/uploads
 
+# Optional: ingress (uncomment to show in HA sidebar)
+ ingress: true
+ panel_icon: mdi:file-document
+ panel_title: "Invoice App"
