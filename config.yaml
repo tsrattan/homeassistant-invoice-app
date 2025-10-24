@@ -1,0 +1,23 @@
+name: "Invoice App"
+version: "1.0.0"
+slug: "invoice_app"
+description: "FastAPI-based Invoice Management App"
+arch:
+  - amd64
+startup: services
+boot: auto
+init: false
+
+image: "tsrattan/invoice-app:latest"
+
+environment:
+  DATABASE_URL: "sqlite:////app/uploads/invoice_new.db"
+  UPLOAD_DIR: "/app/uploads"
+  TZ: "Australia/Sydney"
+
+ports:
+  8088/tcp: 8000
+
+volumes:
+  - /share/invoice_uploads:/app/uploads
+
