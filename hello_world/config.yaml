@@ -1,19 +1,19 @@
-name: "Hello world"
-description: "My first real add-on!"
+name: "Hello World"
 version: "1.0.0"
 slug: "hello_world"
-init: false
+description: "My first Home Assistant add-on"
 arch:
-  - aarch64
   - amd64
-  - armhf
+  - aarch64
   - armv7
-  - i386
+startup: services
+boot: auto
+init: false
 
-# Build args for Supervisor
-build:
-  context: .
-  dockerfile: Dockerfile
-  args:
-    BUILD_FROM: ghcr.io/home-assistant/amd64-base:latest
+# Use a public base image
+image: "ghcr.io/home-assistant/amd64-base:latest"
+
+# Command to run
+command: >
+  bash -c "echo 'Hello World!' && sleep infinity"
 
