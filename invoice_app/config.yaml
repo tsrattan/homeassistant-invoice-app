@@ -8,10 +8,6 @@ startup: services
 boot: auto
 init: false
 
-# Use a Dockerfile inside the add-on folder instead of private image
-build:
-  context: .
-  dockerfile: Dockerfile
 
 environment:
   DATABASE_URL: "sqlite:////app/uploads/invoices_new.db"
