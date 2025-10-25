@@ -9,3 +9,11 @@ arch:
   - armhf
   - armv7
   - i386
+
+# Build args for Supervisor
+build:
+  context: .
+  dockerfile: Dockerfile
+  args:
+    BUILD_FROM: ghcr.io/home-assistant/amd64-base:latest
+
