@@ -1,3 +1,5 @@
+---
+
 name: "Invoice App"
 version: "1.0.0"
 slug: "invoice_app"
@@ -18,10 +20,12 @@ environment:
 
 # Mount HA host folder for uploads
 volumes:
-  - /share/invoice_uploads:/app/uploads
+  - /share/invoice_uploads:/app/uploadsi:rw
 
 # Enable Ingress for running inside Home Assistant sidebar
 ingress: true
 panel_icon: mdi:file-document
 panel_title: "Invoice App"
 
+ports:
+  8000/tcp: 8000
